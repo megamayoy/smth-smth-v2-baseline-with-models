@@ -110,7 +110,7 @@ For more details, please refer: https://openreview.net/pdf?id=rkX9Z_kwf
 
 
 ## LICENSE
-Most code is copyright (c) 2018 Twenty Billion Neurons GmbH under an MIT Licence. See the file `LICENSE` for details.
+See the file `LICENSE` for details.
 Some code snippets have been taken from Keras (see `LICENSE_keras`) and the PyTorch (see `LICENSE_pytorch`). See comments in the source code for details.
 
 ## References
