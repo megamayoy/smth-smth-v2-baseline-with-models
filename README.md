@@ -66,9 +66,9 @@ With their respective config files here: `configs/pretrained/`
 
 - We provide a vanilla implementation of VGG-styled 3D-CNN with 11 layers of 
 3D convolutions. Please refer here: 
-[model3D_1.py](https://github.com/TwentyBN/smth-smth-baseline/blob/master/models/model3D_1.py)
+[model3D_1.py](models/model3D_1.py)
 
-- Use the [notebook](https://github.com/TwentyBN/smth-smth-baseline/blob/master/notebooks/get_prediction_from_pre_trained_model.ipynb)
+- Use the [notebook](notebooks/get_prediction_from_pre_trained_model.ipynb)
  to get predictions from these models
 
 ## Test model and get submission file on test data
@@ -81,7 +81,7 @@ The options used here are:
 - `-e`: to evaluate the model on test data
 
 ## Grad-CAM
-Use the [notebook](https://github.com/TwentyBN/smth-smth-baseline/blob/master/notebooks/get_saliency_maps_CAM.ipynb)
+Use the [notebook](notebooks/get_saliency_maps_CAM.ipynb)
  to visualize saliency maps of any example from validation set
 
 e.g.
@@ -103,7 +103,7 @@ Predicted index chosen = 11 (Dropping something next to something)
 ```
 
 ## Commonsense score
-Use the [notebook](https://github.com/TwentyBN/smth-smth-baseline/blob/master/notebooks/analyse_predictions-confusion_contrastive_groups.ipynb)
+Use the [notebook](notebooks/analyse_predictions-confusion_contrastive_groups.ipynb)
  to fetch commonsense score using contrastive groups list in directory `assets/` 
 
 For more details, please refer: https://openreview.net/pdf?id=rkX9Z_kwf
