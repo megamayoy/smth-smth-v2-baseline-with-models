@@ -86,7 +86,7 @@ Use the [notebook](https://github.com/TwentyBN/smth-smth-baseline/blob/master/no
 
 e.g.
 
-![alt text]({{site.url}}/assets/examples/id_56620/mygif.gif)
+![alt text](assets/examples/id_56620/mygif.gif)
 
 ```
 Id of the video sample = 56620
