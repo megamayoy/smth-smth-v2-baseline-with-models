@@ -19,10 +19,14 @@ Performance of pre-trained model on **validation set**:
 ## Setting up
 
 #### Installation
-- Clone the project and move into the root directory
+- Clone this repo and https://github.com/jacobgil/pytorch-grad-cam (for obtaining saliency maps see [section](#Grad-CAM) for more details
+
+- Move into this repo's root directory
 - Setup python environment - `conda env update`
    - This will setup an environment named - `smth`
 - Activate python environment - `source activate smth`
+
+
 
 #### Download the dataset
 The dataset is provided in the form of videos in `webm` format using VP9 
@@ -115,5 +119,3 @@ Some code snippets have been taken from Keras (see `LICENSE_keras`) and the PyTo
 
 ## References
 [1] Goyal et al. ‘The “something something” video database for learning and evaluating visual common sense.’ arXiv preprint arXiv:1706.04261 (2017). In ICCV 2017.
-
-[2] https://github.com/jacobgil/pytorch-grad-cam

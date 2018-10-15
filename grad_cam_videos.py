@@ -1,36 +1,16 @@
+import sys
 import torch
 import cv2
 import numpy as np
 
 from torch.autograd import Variable
 
-# Taken and adapted from: https://github.com/jacobgil/pytorch-grad-cam
+# cannot import normally since the name contains a hyphen
+sys.modules['grad_cam'] = __import__("grad-cam")
+from grad_cam import *
 
 
-class FeatureExtractor():
-    """ Class for extracting activations and
-    registering gradients from targetted intermediate layers """
-
-    def __init__(self, model, target_layers):
-        self.model = model
-        self.target_layers = target_layers
-        self.gradients = []
-
-    def save_gradient(self, grad):
-        self.gradients.append(grad)
-
-    def __call__(self, x):
-        outputs = []
-        self.gradients = []
-        for name, module in self.model._modules.items():
-            x = module(x)
-            if name in self.target_layers:
-                x.register_hook(self.save_gradient)
-                outputs += [x]
-        return outputs, x
-
-
-class ModelOutputs():
+class ModelOutputsVideo(ModelOutputs):
     """ Class for making a forward pass, and getting:
     1. The network output.
     2. Activations from intermeddiate targetted layers.
@@ -40,9 +20,6 @@ class ModelOutputs():
         self.model = model
         self.feature_extractor = FeatureExtractor(
             self.model.conv_column, target_layers)
-
-    def get_gradients(self):
-        return self.feature_extractor.gradients
 
     def __call__(self, x):
         target_activations, output = self.feature_extractor(x)
@@ -54,7 +31,7 @@ class ModelOutputs():
         return target_activations, output
 
 
-class GradCam:
+class GradCamVideo(GradCam):
     def __init__(self, model, target_layer_names, class_dict, use_cuda,
                  input_spatial_size=224):
         self.model = model
@@ -65,10 +42,7 @@ class GradCam:
         if self.cuda:
             self.model = model.cuda()
 
-        self.extractor = ModelOutputs(self.model, target_layer_names)
-
-    def forward(self, input):
-        return self.model(input)
+        self.extractor = ModelOutputsVideo(self.model, target_layer_names)
 
     def __call__(self, input, index=None):
         if self.cuda:
