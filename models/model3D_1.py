@@ -4,7 +4,7 @@ import torch.nn as nn
 
 class Model(nn.Module):
     """
-    - A VGG-style 3D CNN with 11 layers.
+    - A 3D CNN with 11 layers.
     - Kernel size is kept 3 for all three dimensions - (time, H, W)
       except the first layer has kernel size of (3, 5, 5)
     - Time dimension is preserved with `padding=1` and `stride=1`, and is

@@ -68,7 +68,7 @@ multiple of number of gpus used_)
 - Pre-trained models available in directory: `trained_models/pretrained/`
 With their respective config files here: `configs/pretrained/`
 
-- We provide a vanilla implementation of VGG-styled 3D-CNN with 11 layers of 
+- We provide a vanilla implementation of consisting of 11 layers of 
 3D convolutions. Please refer here: 
 [model3D_1.py](models/model3D_1.py)
 
