@@ -19,7 +19,7 @@ Performance of pre-trained model on **validation set**:
 ## Setting up
 
 #### Installation
-- Clone this repo and https://github.com/jacobgil/pytorch-grad-cam (for obtaining saliency maps see [section](#Grad-CAM) for more details
+- Clone this repo and https://github.com/jacobgil/pytorch-grad-cam (for obtaining saliency maps see [section](#grad-cam) for more details
 
 - Move into this repo's root directory
 - Setup python environment - `conda env update`
@@ -65,7 +65,7 @@ multiple of number of gpus used_)
 - `column_units: 512`: desired number of units in feature space for each sample
 
 ## How to use a pre-trained model?
-- Pre-trained models available in directory: `trained_models/pretrained/`
+- Pre-trained models are available in directory: `trained_models/pretrained/`
 With their respective config files here: `configs/pretrained/`
 
 - We provide a vanilla implementation of consisting of 11 layers of 
